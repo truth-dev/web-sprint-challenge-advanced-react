@@ -1,6 +1,8 @@
-
+import AppClass from './AppClass'
+import React from 'react'
+import {render} from '@testing-library/react'
 // Write your tests here
-
-test('sanity', () => {
-  expect(true).toBe(false)
+test('renders AppClass without errors', () => {
+  render(<AppClass/>)
 })
+
