@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 
+
 // Suggested initial states
 const initialMessage = ''
 const initialEmail = ''
@@ -49,7 +50,7 @@ export default class AppClass extends React.Component {
     getXYMessage = () => {
     
       const {x , y} = this.getXY()
-      console.log(x + 1, y + 1)
+     
      
       return `coordinates (${x + 1}, ${y + 1})`;
       
@@ -59,6 +60,7 @@ export default class AppClass extends React.Component {
 
   reset = (e) => {
     e.preventDefault();
+    
  this.setState({
   value: {
     ...initialState,
@@ -163,7 +165,7 @@ export default class AppClass extends React.Component {
     }
     axios.post(`http://localhost:9000/api/result`, key)
       .then(res => {
-        console.log(res.data)
+        
         this.setState({
           ...this.state, value: { ...this.state.value, message: res.data.message, email: '' }
         })
@@ -181,6 +183,7 @@ export default class AppClass extends React.Component {
     
 
     return (
+      
       <div id="wrapper" className={className}>
         <div className="info">
           <h3 id="coordinates">{this.getXYMessage()}</h3>
@@ -213,7 +216,16 @@ export default class AppClass extends React.Component {
             value={value.email}></input>
           <input id="submit" type="submit"></input>
         </form>
-      </div>
+          
+
+          
+          
+          
+          
+          
+         </div>
+      
     )
+
   }
 }
